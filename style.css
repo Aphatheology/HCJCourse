@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;;
+}
+
+h2 {
+    width: 80%;
+    text-align: center;
+    margin: 25px auto;
+    font-size: 175%; 
+}
+
+/* The Styling below are more like the default settings, which perfect fits what is required in the Mobile Layout */
+
+.container {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.container div {
+    display: block;
+    width: 100%;
+    margin: 10px 0px;
+    border: 3px solid black;
+    position: relative;
+}
+
+div h4 {
+    border: 2px solid black;
+    background-color: rgb(26, 24, 24);
+    color: black;
+    display: inline-block;
+    padding: 5px 30px;
+    position: absolute;
+    right: 0;
+    margin-bottom: 10px;
+    font-size: 125%;
+}
+
+.container div:nth-child(1) h4 {
+    background-color: #f06529;
+}
+
+.container div:nth-child(2) h4 {
+    background-color:#2965f1;
+}
+
+.container div:nth-child(3) h4 {
+    background-color: #f0db4f;
+    color: black;
+}
+
+div p {
+    padding: 45px 15px 15px;
+}
+
+/* Styling for Desktop Layout */
+
+@media (min-width: 992px) {
+    .container {
+        /* display: flex;
+        flex-direction: row;
+        justify-content: center; */
+        /* align-items: center; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px 20px;
+    }
+}
+
+
+/* Styling for Tablet Layout */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        display: grid;
+        gap: 10px 20px;
+    }
+
+    .container div:nth-child(3) {
+        /* grid-column-start: 1;
+        grid-column-end: 2; */
+        grid-column: span 2;
+    }
+}
